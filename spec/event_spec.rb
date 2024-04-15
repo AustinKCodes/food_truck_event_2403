@@ -10,5 +10,11 @@ RSpec.describe Event do
 
             expect(event).to be_an_instance_of(Event)
         end
+
+        it "can have food trucks" do
+            event = Event.new("South Pearl Street Farmers Market")
+
+            expect(event.food_trucks).to eq([])
+        end
     end
 end
