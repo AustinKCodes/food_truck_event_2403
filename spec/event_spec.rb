@@ -47,7 +47,7 @@ RSpec.describe Event do
     end
 
     describe "trucks selling specfic items" do
-        it "can return specific items on trucks"
+        it "can return specific items on trucks" do
         event = Event.new("South Pearl Street Farmers Market")
             food_truck1 = FoodTruck.new("Rocky Mountain Pies")
             food_truck2 = FoodTruck.new("Ba-Nom-a-Nom") 
@@ -69,5 +69,6 @@ RSpec.describe Event do
 
             expect(event.food_trucks_that_sell(item1)).to eq([food_truck1, food_truck3])
             expect(event.food_trucks_that_sell(item4)).to eq([food_truck2])
+        end
     end
 end
