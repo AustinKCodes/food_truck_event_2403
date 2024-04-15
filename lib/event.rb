@@ -33,4 +33,16 @@ class Event
         end
         inventory_hash
     end
+
+    def overstocked_items
+        overstocked = []
+        @food_trucks.each do |food_truck|
+            food_truck.inventory.each do |item, quantity|
+                if quantity > 50 && !overstocked.include?(item) && @food_trucks.count {|food_truck| food_truck.inventory.include?(item)} > 1
+                overstocked << item
+                end
+            end
+        end
+        overstocked
+    end
 end
