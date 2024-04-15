@@ -14,4 +14,8 @@ attr_reader :name, :inventory
         @inventory[item] ||= 0
         @inventory[item] += quantity
     end
+
+    def potential_revenue
+        @inventory.sum { |item, quantity| item.price * quantity }
+    end
 end
