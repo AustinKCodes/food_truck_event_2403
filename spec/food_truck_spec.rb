@@ -15,5 +15,11 @@ RSpec.describe FoodTruck do
 
             expect(food_truck1.name).to eq("Rocky Mountain Pies")
         end
+
+        it "has an inventory" do
+            food_truck1 = FoodTruck.new("Rocky Mountain Pies")
+
+            expect(food_truck1.inventory).to eq({})
+        end
     end
 end
